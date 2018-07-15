@@ -20,7 +20,72 @@ module.exports = class MatrixRotator {
   rotate (direction) {
     // do work here
 
-    // must be a valid Direction, see Direction.js
+    // console.log(this.matrix);   
+    // console.log(this.matrix.length)
 
-  }
+    // // **find the middle arrary
+    // let middleArr = this.matrix[Math.floor(this.matrix.length/2)];
+    // console.log(middleArr);
+    // // **find the center index
+    // let centerNum = middleArr[Math.floor(middleArr.length/2)];
+    // let centerIndex = middleArr.indexOf(centerNum);
+    // console.log(centerIndex);
+    let theMatrix = this.matrix;
+    // console.log(theMatrix)
+    console.log(direction);
+    let newMatrix = [];
+    let newArr = [];
+
+    if (direction === 'ClockWise'){
+      while (theMatrix[0].length>0){
+        for (let i = theMatrix.length-1; i>=0; i--){
+          newArr.push(theMatrix[i][0]);
+          theMatrix[i].shift();
+        }
+        newMatrix.push(newArr);
+        newArr = [];
+      }
+      console.log(newMatrix);
+      this.matrix = newMatrix;
+    }else if (direction === 'CounterClockWise'){
+      while (theMatrix[0].length>0){
+        for (let i = 0; i<theMatrix.length; i++){
+          newArr.push(theMatrix[i][0]);
+          theMatrix[i].shift();
+        }
+        newMatrix.push(newArr);
+        newArr = [];
+      }
+      console.log(newMatrix);
+      this.matrix = newMatrix;
+
+    }
+
+    
+
+    // for (let i=theMatrix.length-1; i>=0; i--){
+
+    //   console.log(this.matrix[i])
+      
+    //     // let taken = this.matrix[j];
+    //     // return taken
+    //     // row1.unshift(taken);
+    //   }
+    // console.log(taken);
+  
+
+    }
+
+
+    
+    // function centerIndex(arr){
+    //   let middleIndex = 
+    //   return middleIndex
+    // } 
+    // console.log(middleArr.findIndex(centerIndex));  
+
+
+    // must be a valid Direction, see Direction.jsmiddleArr
+
+  // }
 };
