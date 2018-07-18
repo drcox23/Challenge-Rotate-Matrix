@@ -37,6 +37,8 @@ module.exports = class MatrixRotator {
     let newArr = [];
 
     if (direction === 'ClockWise'){
+      console.log(theMatrix);
+      console.log('*************')
       while (theMatrix[0].length>0){
         for (let i = theMatrix.length-1; i>=0; i--){
           newArr.push(theMatrix[i][0]);
@@ -48,10 +50,12 @@ module.exports = class MatrixRotator {
       console.log(newMatrix);
       this.matrix = newMatrix;
     }else if (direction === 'CounterClockWise'){
+      console.log(theMatrix);
+      console.log('**************')
       while (theMatrix[0].length>0){
         for (let i = 0; i<theMatrix.length; i++){
-          newArr.push(theMatrix[i][0]);
-          theMatrix[i].shift();
+          newArr.push(theMatrix[i][theMatrix[i].length-1]);
+          theMatrix[i].pop();
         }
         newMatrix.push(newArr);
         newArr = [];
@@ -61,17 +65,7 @@ module.exports = class MatrixRotator {
 
     }
 
-    
-
-    // for (let i=theMatrix.length-1; i>=0; i--){
-
-    //   console.log(this.matrix[i])
-      
-    //     // let taken = this.matrix[j];
-    //     // return taken
-    //     // row1.unshift(taken);
-    //   }
-    // console.log(taken);
+  
   
 
     }
